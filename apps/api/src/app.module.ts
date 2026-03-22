@@ -6,9 +6,19 @@ import { AuthModule } from './auth/auth.module';
 import { BookingsModule } from './bookings/bookings.module';
 import { DrizzleModule } from './db/drizzle.module';
 
+const nodeEnv = process.env.NODE_ENV ?? 'development';
+
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      envFilePath: [
+        `.env.${nodeEnv}.local`,
+        `.env.${nodeEnv}`,
+        '.env.local',
+        '.env',
+      ],
+    }),
     DrizzleModule,
     AuthModule,
     BookingsModule,
