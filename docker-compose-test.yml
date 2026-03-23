@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    ports:
+      - "5431:5432"
+    environment:
+      POSTGRES_USER: booking
+      POSTGRES_PASSWORD: booking_secret
+      POSTGRES_DB: booking_db_test
+    volumes:
+      - booking-data-test:/var/lib/postgresql
+
+volumes:
+  booking-data-test:
