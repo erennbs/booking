@@ -28,7 +28,6 @@ export const bookings = pgTable(
       .notNull(),
     date: date('date').notNull(),
     startTime: time('start_time').notNull(),
-    endTime: time('end_time').notNull(),
     status: varchar('status', { length: 20 }).notNull().default('confirmed'),
     createdAt: timestamp('created_at', { withTimezone: true })
       .defaultNow()

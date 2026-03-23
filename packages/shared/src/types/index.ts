@@ -18,7 +18,6 @@ export interface Booking {
   userId: string;
   date: string;
   startTime: string;
-  endTime: string;
   status: BookingStatus;
   createdAt: string;
   updatedAt: string;

@@ -16,7 +16,4 @@ export const createBookingSchema = z.object({
   startTime: z
     .string()
     .regex(timeRegex, "Start time must be in HH:mm format"),
-  endTime: z
-    .string()
-    .regex(timeRegex, "End time must be in HH:mm format"),
 });
