@@ -7,9 +7,10 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "npm run dev --workspace=apps/api & npm run dev --workspace=apps/web",
     "dev:api": "npm run start:dev --workspace=apps/api",
     "dev:web": "npm run dev --workspace=apps/web",
+    "prod:api": "npm run start:prod --workspace=apps/api",
+    "prod:web": "npm run start --workspace=apps/web",
     "build": "npm run build --workspaces",
     "test": "npm run test --workspaces --if-present",
     "lint": "npm run lint --workspaces --if-present",
